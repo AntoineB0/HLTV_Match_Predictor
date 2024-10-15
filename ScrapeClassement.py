@@ -66,7 +66,3 @@ def scrape_team_points() -> list:
 
     
 
-# Exécuter la fonction et afficher les résultats
-team_points = scrape_team_points()
-for team, points in team_points:
-    print(f"Équipe: {team}, Points: {points}")
