@@ -64,5 +64,8 @@ def scrape_team_points() -> list:
     
     return team_data
 
-    
+# Exemple d'utilisation
+team_points = scrape_team_points()
+print(team_points)
+
 

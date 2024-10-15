@@ -5,14 +5,12 @@ import time
 import json
 
 def ScrapForm(html: str) -> list:
-    """_summary_
-
-    Args:
-        htmlstr (_type_): lien de la page html
-
-    Returns:
-        list: _description_
     """
+    Récupère et extrait les données de formulaire d'une page HTML donnée.
+        html (str): Lien de la page HTML à scraper.
+        list: Une liste de tuples contenant le nom de la série et les valeurs extraites.
+    """
+    
     # Configurer les options de Chrome
     chrome_options = Options()
     chrome_options.add_argument("--disable-gpu")
@@ -64,5 +62,7 @@ def ScrapForm(html: str) -> list:
     
     return extracted_data
 
-
+# Exemple d'utilisation
 print(ScrapForm('https://www.hltv.org/betting/analytics/2376744/3dmax-vs-tsm-esl-challenger-league-season-48-europe'))
+#Ce qui est renvoyer
+#[('3DMAX', [25, 42, 41, 59, 45, 52, 50, 65, 62, 46, 44, 45, 43]), ('TSM', [17, 14, 17, 27, 24, 32, 33, 30, 21, 25, 21, 20, 15])]
