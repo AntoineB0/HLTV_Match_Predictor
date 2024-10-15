@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import time
 import re  # Importer le module re pour les expressions régulières
 
-def scrape_team_points() -> list:
+def scrapeTeamPoints() -> list:
     """Récupère les points des équipes du classement HLTV.
 
     Returns:
@@ -65,7 +65,7 @@ def scrape_team_points() -> list:
     return team_data
 
 # Exemple d'utilisation
-team_points = scrape_team_points()
+team_points = scrapeTeamPoints()
 print(team_points)
 
 
