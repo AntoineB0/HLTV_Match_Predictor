@@ -1,6 +1,6 @@
-from ScrapeForm import ScrapeForm
+from ScrapeForm import ScrapForm
 from ScrapeClassement import scrapeTeamPoints
-import Equipe
+from Equipe import Equipe
 
 def DataCentral(html: str) -> None:
     """
@@ -8,7 +8,7 @@ def DataCentral(html: str) -> None:
     """
     
     Classement = scrapeTeamPoints()
-    Form = ScrapeForm(html)
+    Form = ScrapForm(html)
     
     Equipe1 = Equipe(Form[0][0],0,Form[0][1])
     Equipe2 = Equipe(Form[1][0],0,Form[1][1])
@@ -18,5 +18,7 @@ def DataCentral(html: str) -> None:
             Equipe1.elo = Classement[i][1]
         if Classement[i][0] == Equipe2.nom:
             Equipe2.elo = Classement[i][1]
+            
+    return Equipe1,Equipe2
     
     

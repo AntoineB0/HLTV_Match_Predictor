@@ -23,7 +23,7 @@ def scrapeTeamPoints() -> list:
     driver.get('https://www.hltv.org/ranking/teams')
     
     # Attendre que la page soit complètement chargée
-    time.sleep(3)
+    time.sleep(2)
     
     # Récupérer le contenu HTML de la page
     html = driver.page_source
@@ -63,9 +63,4 @@ def scrapeTeamPoints() -> list:
     driver.quit()
     
     return team_data
-
-# Exemple d'utilisation
-team_points = scrapeTeamPoints()
-print(team_points)
-
 

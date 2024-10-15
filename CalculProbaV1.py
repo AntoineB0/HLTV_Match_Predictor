@@ -30,15 +30,9 @@ def CalculProbaV1(E1Elo:int , E1Forme:int , E2Elo:int ,E2Forme:int) ->float:
     SeuilForme = 50
     SeuilDivision = 200
     
+    
     ProbaVictoireE1 = 1 / (1 + 10 ** ((E2Elo*(E2Forme/SeuilForme) - E1Elo*(E1Forme/SeuilForme)) / SeuilDivision))
     ProbaVictoireE2 = 1-ProbaVictoireE1
     
     return ProbaVictoireE1,ProbaVictoireE2
 
-#Exemple d'utilisation
-E1Elo = 77
-E1Forme = 43
-E2Elo = 17
-E2Forme = 15
-ProbaVictoire=CalculProbaV1(E1Elo,E1Forme,E2Elo,E2Forme)
-print(ProbaVictoire)

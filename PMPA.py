@@ -14,7 +14,7 @@ def PMPA(html:str)->str:
     driver = webdriver.Chrome(options=chrome_options)
     
     # Accéder à la page du classement des équipes
-    driver.get('https://www.hltv.org/ranking/teams')
+    driver.get(html)
     
     # Attendre que la page soit complètement chargée
     time.sleep(3)
@@ -22,6 +22,15 @@ def PMPA(html:str)->str:
     # Récupérer le contenu HTML de la page
     html = driver.page_source
     
-    # Parser le HTML avec BeautifulSoup
     soup = BeautifulSoup(html, 'html.parser')
+    
+    page_analytic = soup.find('div', class_="matchpage-analytics-section")
+    
+    analytics_link = page_analytic.find('a', class_="matchpage-analytics-center-container")['href']
+    
+    link='https://www.hltv.org'+analytics_link
+    
+    driver.quit()
+
+    return link
     

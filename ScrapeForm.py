@@ -62,7 +62,3 @@ def ScrapForm(html: str) -> list:
     
     return extracted_data
 
-# Exemple d'utilisation
-print(ScrapForm('https://www.hltv.org/betting/analytics/2376744/3dmax-vs-tsm-esl-challenger-league-season-48-europe'))
-#Ce qui est renvoyer
-#[('3DMAX', [25, 42, 41, 59, 45, 52, 50, 65, 62, 46, 44, 45, 43]), ('TSM', [17, 14, 17, 27, 24, 32, 33, 30, 21, 25, 21, 20, 15])]
